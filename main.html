@@ -5,10 +5,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background: #FFFFFF;
+
+            font-size: 14px;
+            color: #000000;
+        }
+
+        #news {
+            border: 1px solid #999999;
+
+            float: left;
+            /* margin-top: 74px; */
+
+            width: 280px;
+            height: 460px;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: bolder;
+            text-align: left;
+        }
+
+        #news tr:first-child {
+            background: #3399FF;
+            font-size: 14px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        #news tr:nth-child(even) {
+            background: #FFFFCC;
+            font-size: 12px;
+            line-height: 2rem;
+        }
+
+        #news tr:nth-child(3),
+        #news tr:nth-child(5) {
+            background: #DDDDDD;
+            font-size: 12px;
+            line-height: 2rem;
+        }
+
+        #pic {
+            border: 1px solid #999999;
+
+            float: right;
+
+            width: 590px;
+            height: 460px;
+            background: #333333;
+
+            text-align: center;
+        }
+
+        #pic #big img {
+            height: 300px;
+        }
+
+        #intro {
+            font-size: 14px;
+            color: #FFFF00
+        }
+    </style>
 </head>
 
 <body>
+    <p>最新消息</p>
+    <div id="news">
+        <table style="width: 100%">
+            <tr>
+                <td>主題</td>
+                <td>發布日期</td>
+            </tr>
+            <tr>
+                <td><img src="./images/0201.png">公告全國技能競賽相關事宜</td>
+                <td>114/04/21</td>
+            </tr>
+            <tr>
+                <td><img src="./images/0201.png">公告即測即評及發證相關事宜</td>
+                <td>114/04/21</td>
+            </tr>
+            <tr>
+                <td><img src="./images/0201.png">公告網頁設計修題相關事宜</td>
+                <td>114/04/21</td>
+            </tr>
+            <tr>
+                <td><img src="./images/0201.png">公告網路架設應檢相關事宜</td>
+                <td>114/04/21</td>
+            </tr>
+        </table>
+    </div>
+    <div id="pic">
+        <table>
+            <tr id="big">
+                <td colspan="4"><img src="./images/0202A.png" alt=""></td>
+            </tr>
+            <tr>
+                <td class="small"><img src="./images/0202B.png"></td>
+                <td class="small"><img src="./images/0203B.png"></td>
+                <td class="small"><img src="./images/0204B.png"></td>
+                <td class="small"><img src="./images/0205B.png"></td>
+            </tr>
+            <tr id="intro">
+                <td>第30屆倫敦奧運</td>
+                <td>許淑淨奪舉重銀牌</td>
+                <td>第26屆深圳世大運</td>
+                <td>第27屆喀山世大運</td>
+            </tr>
+        </table>
+    </div>
 
+    <script src="./others/jquery-2.1.4.min.js"></script>
+    <script>
+        $('.small img').each((index, img) => {
+            $(img).on('click', () => {
+                $('#big img').attr('src', `./images/020${index + 2}A.png`)
+            })
+        })
+    </script>
 </body>
 
 </html>
